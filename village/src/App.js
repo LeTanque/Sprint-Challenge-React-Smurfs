@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './App.css';
+import './css/index.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 
