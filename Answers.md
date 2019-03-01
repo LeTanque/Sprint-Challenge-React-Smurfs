@@ -11,7 +11,7 @@
 
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
-  - C=create POST; R=read GET; U=update PUT; D=destroy DELETE
+  - C=create POST; R=read GET; U=update PUT/PATCH; D=destroy DELETE
 
 - [ ] Mention three tools we can use to make AJAX requests.
 

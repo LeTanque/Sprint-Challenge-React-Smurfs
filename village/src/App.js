@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {NavLink, Link, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
+import Header from './components/Header';
 
 import smurfBackground from './assets/smurfposter.jpg';
 
@@ -73,21 +74,14 @@ class App extends Component {
   render() {
     return (
       <div className="App" style={appStyle}>
-        <header>
-          <h1><Link to='/'>Smurf Village</Link></h1>
-        </header>
         
-        <nav className='header-links'>
-          <NavLink to='./add-smurf' className=''>Add Smurf</NavLink>
-          <NavLink to='./smurfs' className=''>See All Smurfs</NavLink>
-        </nav>
-
-        {/* <SmurfForm addSmurfPost={this.addSmurfPost} /> */}
-        {/* <Smurfs smurfs={this.state.smurfs} removeSmurf={this.removeSmurf} /> */}
+        <Header />
 
         <Route
+          exact
           path='/'
         />
+
         <Route 
           path='/add-smurf'
           render={props => (
@@ -97,6 +91,7 @@ class App extends Component {
             />
           )}
         />
+        
         <Route 
           path='/smurfs'
           render={props => (
