@@ -248,7 +248,6 @@ code {
   visibility: visible;
 }
 form {
-  background-color: #ffffff;
   display: flex;
   flex-flow: column;
   position: relative;
@@ -345,24 +344,6 @@ button:active::after {
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0s;
 }
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v6/L0x5DF4xlVMF-BfR8bXMIjhLq3o.ttf) format('truetype');
-}
 .cltgray {
   color: rgba(55, 55, 55, 0.5);
 }
@@ -415,6 +396,61 @@ a:hover {
   background-color: #500000;
   transition-duration: 0.5s;
 }
+.btn-primary {
+  background-color: #3d92e0;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: #1f4970;
+  transition-duration: 0.5s;
+}
 .App {
+  background-attachment: fixed;
+  background-position: top;
+  background-position-y: 15%;
   text-align: center;
+  height: 100vh;
+}
+.App header {
+  margin: 0 auto;
+}
+.App header h1 {
+  background-color: #3d92e0;
+  color: #ffffff;
+  padding: 10px 0;
+}
+.App header h1 a {
+  color: #ffffff;
+}
+.App .header-links {
+  font-size: 1.4rem;
+  background-color: #3175b3;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.App .header-links a {
+  color: #ffffff;
+  margin: 0 10px;
+}
+.SmurfForm {
+  padding-top: 50px;
+}
+.SmurfForm input {
+  border-radius: 0 0 3px 3px;
+}
+.SmurfForm button {
+  border-radius: 0 0 3px 3px;
+}
+.Smurfs {
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #ffffff;
+}
+.Smurfs .Smurf .deleteSmurf {
+  color: #dd1111;
+  font-weight: bolder;
+  margin-bottom: 10px;
 }
