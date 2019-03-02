@@ -1,12 +1,19 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 
 const Smurf = props => {
-  // console.log(props);
   
   return (
     <div className="Smurf">
-      <h3>{props.name}</h3>
+      <h3>
+        <Link 
+          to={`/smurfs/${props.id}`}
+          onClick={event => props.setActiveSmurf(event, props, `/smurfs/${props.id}`)} 
+        >
+          {props.name}
+        </Link>
+      </h3>
       <strong>{props.height} tall</strong>
       <p>{props.age} smurf years old</p>
       <p 

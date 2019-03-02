@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom';
 
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
+import SmurfProfile from './components/SmurfProfile';
 import Header from './components/Header';
 
 import smurfBackground from './assets/smurfposter.jpg';
@@ -19,6 +20,8 @@ class App extends Component {
     super(props);
     this.state = {
       smurfs: [],
+      activeSmurf: [],
+      activeSmurfID:'',
       error:''
     };
   }
@@ -59,18 +62,40 @@ class App extends Component {
       this.setState({
         smurfs: response.data
       });
-      // this.props.history.push('/friends');
+      this.props.history.push('/smurfs');
     })
     .catch(error => {
       console.log(error);
     });
   }
 
+  setActiveSmurf = (event, smurfFromState, destination) => {
+    event.preventDefault();
+    this.setState({
+      activeSmurf: smurfFromState
+    });
+    console.log('active smurf set', smurfFromState.name, smurfFromState.id, '-------------------------------');
+    this.props.history.push(destination);
+  }
 
-  // add any needed code to ensure that the smurfs collection exists on state and it has data 
-  // coming from the server
-  // Notice what your map function is looping over and returning inside of Smurfs.
-  // You'll need to make sure you have the right properties on state and pass them down to props.
+  setSmurfProfile = (smurfProfileNum) => {
+    // event.preventDefault();
+
+    this.setState({
+      activeSmurfID: smurfProfileNum
+    });
+    // console.log('active smurf prop received. id:', smurfProfileNum, '-------------------------------');
+  }
+
+  // Structure here is simple, I'm going to use my prototype arrow whiteboard to visualize the layout...
+  //  index ---> App _________
+  //            / | \          \
+  //      Header  |  Smurfs      \
+  //              |     \         |
+  //              |    Smurf      |
+  //              |        \      |
+  //      SmurfProfile     SmurfForm
+  // // 
   render() {
     return (
       <div className="App" style={appStyle}>
@@ -91,14 +116,30 @@ class App extends Component {
             />
           )}
         />
-        
+
         <Route 
+          exact
           path='/smurfs'
           render={props => (
             <Smurfs 
               {...props} 
               smurfs={this.state.smurfs}
               removeSmurf={this.removeSmurf}
+              setActiveSmurf={this.setActiveSmurf}
+            />
+          )}
+        />
+
+        <Route
+          exact
+          path='/smurfs/:id'
+          render={props => (
+            <SmurfProfile 
+              {...props}
+              smurfs={this.state.smurfs}
+              activeSmurf={this.state.activeSmurf}
+              setSmurfProfile={this.setSmurfProfile}
+              activeSmurfID={this.state.activeSmurfID}
             />
           )}
         />
