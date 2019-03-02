@@ -9,11 +9,22 @@ import Header from './components/Header';
 
 import smurfBackground from './assets/smurfposter.jpg';
 
+// Structure here is simple, I'm going to use my prototype 
+// arrow whiteboard to visualize the layout...
+//  index ---> App _________
+//            / | \          \
+//      Header  |  Smurfs      \
+//              |     \         |
+//              |    Smurf      |
+//              |        \      |
+//      SmurfProfile     SmurfForm
+/////////////////////////////////////////////////////////
 
-
+// Background image style
 const appStyle = {
   backgroundImage: `url(${smurfBackground})`
 }
+
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +37,7 @@ class App extends Component {
     };
   }
 
+  // This is the READ in CRUD
   componentDidMount() {
     axios
       .get('http://localhost:3333/smurfs')
@@ -38,6 +50,7 @@ class App extends Component {
       });
   }
 
+  // This is the CREATE in CRUD
   addSmurfPost = (event, smurf) => {
     event.preventDefault();
     axios
@@ -54,6 +67,7 @@ class App extends Component {
       });
   }
 
+  // This is the DELETE in CRUD
   removeSmurf = (event, id) => {
     event.preventDefault();
     axios
@@ -74,28 +88,15 @@ class App extends Component {
     this.setState({
       activeSmurf: smurfFromState
     });
-    console.log('active smurf set', smurfFromState.name, smurfFromState.id, '-------------------------------');
     this.props.history.push(destination);
   }
 
   setSmurfProfile = (smurfProfileNum) => {
-    // event.preventDefault();
-
     this.setState({
       activeSmurfID: smurfProfileNum
     });
-    // console.log('active smurf prop received. id:', smurfProfileNum, '-------------------------------');
   }
 
-  // Structure here is simple, I'm going to use my prototype arrow whiteboard to visualize the layout...
-  //  index ---> App _________
-  //            / | \          \
-  //      Header  |  Smurfs      \
-  //              |     \         |
-  //              |    Smurf      |
-  //              |        \      |
-  //      SmurfProfile     SmurfForm
-  // // 
   render() {
     return (
       <div className="App" style={appStyle}>
