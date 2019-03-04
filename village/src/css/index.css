@@ -1,0 +1,481 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #232323;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+h1,
+.h1 {
+  font-size: 4.2rem;
+  font-family: 'Roboto', sans-serif;
+}
+h2,
+.h2 {
+  font-size: 3.2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+h3,
+.h3 {
+  font-size: 3rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+h4,
+.h4 {
+  font-size: 2.2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+h5,
+.h5 {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+h6,
+.h6 {
+  font-size: 1.4rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+li {
+  font-size: 1.4rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: initial;
+  text-decoration: none;
+}
+p {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+hr {
+  width: calc(100% - 20px);
+  margin: 20px auto;
+  border-top: 1px solid #f5f5f5;
+}
+.container-basic {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+.italic {
+  font-style: italic;
+}
+strong {
+  font-weight: bolder;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.centered {
+  float: none;
+  margin: 0 auto;
+}
+.display-none {
+  display: none;
+}
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0px 6px 20px 3px rgba(55, 55, 55, 0.5);
+  border-radius: 10px;
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+form {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  width: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+  align-items: center;
+  box-shadow: 0 0 0 0 #232323;
+  z-index: 10;
+}
+form > input {
+  border: 0;
+  padding: 12px 16px;
+  margin: 8px;
+  background: #ffffff;
+  font-size: 1rem;
+  width: 240px;
+  border-radius: 0;
+  outline: 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+}
+button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  padding: 0 16px;
+  margin-top: 16px;
+  min-width: 64px;
+  height: 36px;
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  background-color: #ffffff;
+  font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 36px;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+button::-moz-focus-inner {
+  border: none;
+}
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  padding: 50%;
+  width: 32px;
+  height: 32px;
+  background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 1s, transform 0.5s;
+}
+button:hover,
+button:focus {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+button:hover::before {
+  opacity: 0.08;
+}
+button:focus::before {
+  opacity: 0.24;
+}
+button:hover:focus::before {
+  opacity: 0.3;
+}
+button:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+button:active::after {
+  opacity: 0.32;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0s;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v6/L0x5DF4xlVMF-BfR8bXMIjhLq3o.ttf) format('truetype');
+}
+.cltgray {
+  color: rgba(55, 55, 55, 0.5);
+}
+.cgray {
+  color: #999999;
+}
+.cred {
+  color: #dd1111;
+}
+.cblack {
+  color: #000000;
+}
+a {
+  color: #38c46d;
+  text-decoration: none;
+}
+a:hover {
+  color: #1c6237;
+  transition-duration: 0.5s;
+}
+.font-title {
+  font-family: 'Roboto', sans-serif;
+}
+.font-logo {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.btn-gray {
+  background-color: #999999;
+  color: #232323;
+}
+.btn-clear {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+.btn-green {
+  background-color: #38c46d;
+  color: #ffffff;
+}
+.btn-green:hover {
+  background-color: #1c6237;
+  transition-duration: 0.5s;
+}
+.btn-red {
+  background-color: #a00000;
+  color: #ffffff;
+}
+.btn-red:hover {
+  background-color: #500000;
+  transition-duration: 0.5s;
+}
+.btn-primary {
+  background-color: #3d92e0;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: #1f4970;
+  transition-duration: 0.5s;
+}
+.App {
+  background-attachment: fixed;
+  background-position: top;
+  background-position-y: 15%;
+  text-align: center;
+  height: 100vh;
+}
+.App header {
+  margin: 0 auto;
+}
+.App header h1 {
+  background-color: #3d92e0;
+  color: #ffffff;
+  padding: 10px 0;
+}
+.App header h1 a {
+  color: #ffffff;
+}
+.App .header-links {
+  font-size: 1.4rem;
+  background-color: #3175b3;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.App .header-links a {
+  color: #ffffff;
+  margin: 0 10px;
+}
+.SmurfForm {
+  padding-top: 50px;
+}
+.SmurfForm input {
+  border-radius: 0 0 3px 3px;
+}
+.SmurfForm button {
+  border-radius: 0 0 3px 3px;
+}
+.Smurfs {
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #ffffff;
+}
+.Smurfs .Smurf a {
+  color: #232323;
+}
+.Smurfs .Smurf .deleteSmurf {
+  color: #dd1111;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.smurf-profile {
+  color: #ffffff;
+  margin-top: 20px;
+}

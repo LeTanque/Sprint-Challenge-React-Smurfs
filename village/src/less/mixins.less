@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono');
+
+// Color pointers
+@nav-bg: @dark;
+@nav-font: @red;
+@nav-border: @black;
+
+@header-font-color: @light;
+@header-bg-color: @dark;
+@main-font-color: @dark;
+
+@footer-background: @dark;
+@footer-font-color: @red;
+
+@button-bg-color: @red;
+@border-real: @dark;
+
+@links: @green;
+
+.bg-gradient(@bg-gradient-a; @bg-a-opacity; @bg-gradient-b; @bg-b-opacity) {
+  background: linear-gradient( rgba(@bg-gradient-a, @bg-a-opacity), rgba(@bg-gradient-b, @bg-b-opacity));
+};
+
+// Color Vars
+@clear-color: rgba(255,255,255,0.15);
+@white: #ffffff;
+@light: #aaaaaa;
+@light-gray: rgba(55,55,55,0.5);
+@gray: #999999;
+@dark: #232323;
+@black: #000000;
+@red: #dd1111;
+@dark-red: #a00000;
+@primary: rgb(61, 146, 224);
+@green: #38c46d;
+
+// CSS Color definitions
+.cltgray { color: @light-gray; }
+.cgray { color: @gray; }
+.cred { color: @red; }
+.cblack { color: @black; }
+
+// Breakpoints
+@phone-small: ~"(min-width: 0px) and (max-width: 350px)";
+@phone: ~"(min-width: 0px) and (max-width: 600px)";
+@medium: ~"(min-width: 601px) and (max-width: 820px)";
+
+// Transition duration
+.transition(@duration: 0.5s) {
+  -webkit-transition-duration: @duration;
+  -moz-transition-duration: @duration;
+  transition-duration: @duration;
+}
+
+// Border
+.border-radius(@tl: 3px; @tr: @tl; @bl: 3px; @br: @bl) {
+  border-radius: @tl @tr @bl @br;
+}
+.border-left-style(@border-style-width: 5px; @border-style-color: @luncher-saddle) {
+  border-left: @border-style-width solid @border-style-color;
+  padding-right: @border-style-width * 2;
+}
+.border-style(@border-style-width: 5px; @border-style: solid; @border-style-color: @luncher-saddle) {
+  border: @border-style-width @border-style @border-style-color;
+}
+
+// Horizontal RuLeZ
+.hr-style(@hr-margin:20px 0 30px 0; @hr-border-style:1px solid @light-gray) {
+  margin: @hr-margin;
+  border: @hr-border-style;
+}
+
+// Buttons
+.btn(@btn-bg-color; @btn-color; @btn-color-hover: @btn-bg-color; @btn-bg-color-hover: @btn-color;  @btn-width: 50%;  @btn-border-radius: 0;  @btn-font-size: 1.8rem;  @btn-padding: 8px 10px) {
+  background-color: @btn-bg-color;
+  color: @btn-color;
+  border-radius: @btn-border-radius;
+  font-size: @btn-font-size;
+  font-weight: bolder;
+  text-align: center;
+  width: @btn-width;
+  min-width: 100px;
+  padding: @btn-padding;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover{
+    color: @btn-color-hover;
+    background-color: @btn-bg-color-hover;
+    .transition(0.75s);
+  }
+  @media @phone {
+    width: 70%;
+  }
+}
+
+
+// Form Input
+.form-outline(@outline-color:@red;@outline-width:2px;@transition-duration:0.5s) {
+  &:focus {
+    outline-color: @outline-color;
+    outline-width: @outline-width;
+    outline-style: auto;
+    outline-offset: -3px;
+    .transition(@transition-duration);
+  }  
+}
+
+
+
+// Links
+.link(@link-fg-color; @link-bg-color; @link-bold: 600) {
+  color: @link-fg-color;
+  background-color: unset;
+  font-weight: @link-bold;
+  text-decoration: none;
+  &:hover {
+    color: @link-bg-color;
+    background-color: @link-fg-color;
+    font-weight: @link-bold;
+    .border-radius(10px; 10px; 0; 0);
+    .transition(0.75s);
+    @media @phone {
+      .border-radius(5px; 5px; 0; 0);
+    }
+    @media @phone-small {
+      .border-radius(0; 0; 0; 0);
+      letter-spacing: 0.75rem;
+    }
+  }
+}
+
+a { 
+  color: @links;
+  text-decoration: none;
+  &:hover {
+    color: @links/2;
+    transition-duration: 0.5s;
+  }
+}
+
+// Positioning
+.sticky-top(@top-pos) {
+  position: sticky;
+  top: @top-pos;
+}
+
+// Fonts
+.font-body(@weight: 400) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: @weight;
+}
+.font-title {
+  font-family:  'Roboto', sans-serif;
+  // font-weight: @weight;
+}
+.font-logo {
+  font-family: 'Roboto Mono', monospace;
+  // font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+// shadows
+.font-shadow(@font-shadow-x: 1px;@font-shadow-y: 1px;@font-shadow-blur: 5px;@font-shadow-color: black) {
+  text-shadow: @font-shadow-x @font-shadow-y @font-shadow-blur @font-shadow-color;
+}
+.box-shadow(@box-shadow-x: 1px;@box-shadow-y: 4px;@box-shadow-blur: 15px;@box-shadow-spread: 1px;@box-shadow-color: @gray) {
+  box-shadow: @box-shadow-x @box-shadow-y @box-shadow-blur @box-shadow-spread @box-shadow-color;
+}
+
+// Buttons
+.btn-gray { background-color: @gray; color: @dark; }
+.btn-clear { background-color: @clear-color; color: @white; }
+.btn-green { 
+  background-color: @green; 
+  color: @white; 
+  &:hover {
+    background-color: @green/2;
+    transition-duration: 0.5s;
+  }
+}
+.btn-red { 
+  background-color: @dark-red; 
+  color: @white; 
+  &:hover {
+    background-color: @dark-red/2;
+    transition-duration: 0.5s;
+  }
+}
+.btn-primary { 
+  background-color: @primary; 
+  color: @white; 
+  &:hover {
+    background-color: @primary/2;
+    transition-duration: 0.5s;
+  }
+}

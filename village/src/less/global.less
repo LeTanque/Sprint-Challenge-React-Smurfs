@@ -1,0 +1,211 @@
+// Replaces index.css
+* { box-sizing: border-box; }
+
+// Hiding overflow early on the development process could result in bad code and hard to 
+// identify problems later on down the road. So we don't enable it until we need to.
+// html { overflow-x: hidden; } 
+
+html { font-size: 62.5%;  scroll-behavior: smooth;  }
+
+html, body {
+  .font-body;
+  // height: 100%;
+  color: @main-font-color;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  // padding: 0.4rem;
+}
+
+h1, .h1 { font-size: 4.2rem; .font-title; }
+h2, .h2 { font-size: 3.2rem; font-weight: 400; .font-body; }
+h3, .h3 { font-size: 3.0rem; .font-body; }
+h4, .h4 { font-size: 2.2rem; .font-body; }
+h5, .h5 { font-size: 2.0rem; .font-body; }
+h6, .h6 { font-size: 1.4rem; .font-body; }
+
+li { font-size: 1.4rem; }
+a { 
+  text-decoration: none; 
+  color: inherit;
+  &:hover {
+    color: initial;
+    text-decoration: none;
+  }
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+hr { 
+  width: calc(100% - 20px);
+  margin: 20px auto;
+  border-top: 1px solid @light + 75%; 
+}
+.container-basic {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;  
+}
+
+.italic { font-style: italic; }
+strong { font-weight: bolder; }
+code { font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
+
+.centered {
+  float: none;
+  margin: 0 auto;
+}
+  
+.display-none { display: none; }
+
+.container { 
+  max-width: 700px; 
+  margin: 0 auto;
+  .box-shadow(0px;6px;20px;3px;@light-gray);
+  border-radius: 10px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: @black;
+  color: @white;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+// Cool forms and buttons from Mr. Dustin
+// Inherited from bootstrap
+form {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  width: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+  align-items: center;
+  .box-shadow(0;0;0;0;@dark);
+  z-index: 10;
+}
+
+form > input {
+  border: 0;
+  padding: 12px 16px;
+  margin: 8px;
+  background: @white;
+  font-size: 1rem;
+  width: 240px;
+  border-radius: 0;
+  outline: 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  padding: 0 16px;
+  margin-top: 16px;
+  min-width: 64px;
+  height: 36px;
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  background-color: @white;
+  // box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  //     0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  font-family: var(
+      --pure-material-font,
+      "Roboto",
+      "Segoe UI",
+      BlinkMacSystemFont,
+      system-ui,
+      -apple-system
+  );
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 36px;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+button::-moz-focus-inner { border: none; }
+
+// Overlay
+button::before {
+content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+// Ripple
+button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  padding: 50%;
+  width: 32px; // Safari
+  height: 32px; // Safari
+  background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 1s, transform 0.5s;
+}
+
+// Hover, Focus
+button:hover, button:focus {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+button:hover::before { opacity: 0.08; }
+button:focus::before { opacity: 0.24; }
+button:hover:focus::before { opacity: 0.3; }
+
+// Active
+button:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+button:active::after {
+  opacity: 0.32;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0s;
+}
